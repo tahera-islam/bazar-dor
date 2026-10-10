@@ -483,18 +483,6 @@ return (
 
             {/* Desktop Category Navigation */}
             <nav className="hidden gap-2 overflow-x-auto pb-3 md:flex">
-
-                <Link
-                    href="/"
-                    className={`flex shrink-0 items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition ${pathname === "/"
-                            ? "bg-[#05893E] text-white"
-                            : "text-[#1D271F] hover:bg-green-50"
-                        }`}
-                >
-                    <span>🛒</span>
-                    <span>সব পণ্য</span>
-                </Link>
-
                 {categories.map((category) =>
                     renderCategoryLink(category)
                 )}

@@ -1,2 +1,25 @@
 @import "tailwindcss";
 @import "@heroui/styles";
+
+
+
+body {
+    background-color:#f7fff7;
+}
+.price-ticker-track {
+    animation: ticker-scroll 30s linear infinite;
+}
+
+.price-ticker-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes ticker-scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
