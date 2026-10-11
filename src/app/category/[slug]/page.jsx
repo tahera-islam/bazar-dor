@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 
-import ProductCard from "@/components/ProductCard";
-import SortDropdown from "@/components/SortDropdown";
+import ProductCard from "@/components/home/ProductCard";
+import SortDropdown from "@/components/home/SortDropdown";
 
 const API_URL = "https://openapi.programming-hero.com/api/bazardor";
 

@@ -4,6 +4,8 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { signIn } from "@/lib/auth-client";
+import toast from "react-hot-toast";
+
 
 const SignInPage = () => {
     const router = useRouter();
@@ -28,14 +30,17 @@ const SignInPage = () => {
             });
 
             if (result.error) {
+                toast.error(result.error.message || "ইমেইল অথবা পাসওয়ার্ড সঠিক নয়।");
                 setError(result.error.message || "ইমেইল অথবা পাসওয়ার্ড সঠিক নয়।");
                 return;
             }
 
+            toast.success("সফলভাবে লগইন হয়েছে!");
+
             router.push("/");
             router.refresh();
         } catch (error) {
-            setError("Login করা যায়নি। আবার চেষ্টা করো।");
+            toast.error("লগইন করা যায়নি। আবার চেষ্টা করুন।");
         } finally {
             setLoading(false);
         }

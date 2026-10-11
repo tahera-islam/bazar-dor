@@ -3,8 +3,7 @@
 import { useEffect, useState } from "react";
 
 const API_URLS = [
-    "https://api.api-store.workers.dev/api/bazardor",
-    "https://api.abcz.workers.dev/api/bazardor",
+    "https://openapi.programming-hero.com/api/bazardor",
 ];
 
 const PriceTicker = () => {
@@ -56,6 +55,11 @@ return (
                 );
                 const isUp = change >= 0;
 
+                const isDown = product.change?.dir
+                    ? product.change.dir === "down"
+                    : change < 0;
+
+
                 return (
                     <div
                         key={`${product.id ?? product.name ?? "product"}-${index}`}
@@ -70,11 +74,15 @@ return (
                         </span>
                         <span
                             className={
-                                isUp ? "text-red-600" : "text-green-700"
+                                isUp
+                                    ? "text-red-600"
+                                    : isDown
+                                        ? "text-green-700"
+                                        : "text-gray-500"
                             }
                         >
-                            {isUp ? "▲" : "▼"}{" "}
-                            {Math.abs(change)}%
+                            {isUp ? "▲" : isDown ? "▼" : "—"}{" "}
+                            {Math.abs(change).toLocaleString("bn-BD")}%
                         </span>
                     </div>
                 );

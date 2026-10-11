@@ -4,6 +4,8 @@ import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { signUp, signIn } from "@/lib/auth-client";
+import toast from "react-hot-toast";
+
 
 const SignUpPage = () => {
     const router = useRouter();
@@ -21,11 +23,13 @@ const SignUpPage = () => {
         setError("");
 
         if (password.length < 8) {
+            toast.error("পাসওয়ার্ড কমপক্ষে ৮ অক্ষরের হতে হবে।");
             setError("পাসওয়ার্ড কমপক্ষে ৮ অক্ষরের হতে হবে।");
             return;
         }
 
         if (password !== confirmPassword) {
+            toast.error("দুটি পাসওয়ার্ড মিলছে না।");
             setError("দুটি পাসওয়ার্ড মিলছে না।");
             return;
         }
@@ -40,16 +44,17 @@ const SignUpPage = () => {
             });
 
             if (result.error) {
-                setError(
+                toast.error(
                     result.error.message || "অ্যাকাউন্ট তৈরি করা যায়নি। আবার চেষ্টা করুন।"
                 );
                 return;
             }
+            toast.success("অ্যাকাউন্ট সফলভাবে তৈরি হয়েছে!");
 
             router.push("/");
             router.refresh();
         } catch (error) {
-            setError("অ্যাকাউন্ট তৈরি করা যায়নি। আবার চেষ্টা করুন।");
+            toast.error("অ্যাকাউন্ট তৈরি করা যায়নি। আবার চেষ্টা করুন।");
         } finally {
             setLoading(false);
         }
