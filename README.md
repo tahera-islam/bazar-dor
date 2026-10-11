@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🛒 বাজার দর (Bazar Dor)
 
-## Getting Started
+বাজার দর একটি বাংলা ওয়েবসাইট, যেখানে নিত্যপ্রয়োজনীয় পণ্যের দাম ও দামের পরিবর্তন দেখা যায়।
 
-First, run the development server:
+## 📖 বি বরণ
+বাজার দর একটি আধুনিক ওয়েব অ্যাপ্লিকেশন যেখানে চাল, ডাল, তেল, সবজি , মাছ, মাংস,
+ডিম ও মসলা সহ বিভিন্ন পণ্যের দৈনিক বাজারদর দেখা যায়। এই অ্যাপে বাজারভিত্তিক সর্বনিম্ন
+ও সর্ব োচ্চ দাম, দামের পরিবর্তনের হার এবং বিভিন্ন বিভাগের বাজারের তথ্য সংগ্রহ করা হয়েছে ।
+
+## ✨ Features
+
+- 📱 মোবাইল, ট্যাবলেট ও ডেস্কটপে ব্যবহার উপযোগী।
+- 🇧🇩 বাংলা ভাষায় সহজ ইন্টারফেস।
+- 🛍️ বিভিন্ন পণ্যের তালিকা দেখা।
+- 📊 পণ্যের দামের পরিবর্তন দেখা।
+- 🗂️ ক্যাটাগরি অনুযায়ী পণ্য খোঁজা।
+- 🔎 পণ্যের বিস্তারিত তথ্য দেখা।
+- 🔐 ব্যবহারকারী অ্যাকাউন্ট ব্যবস্থাপনা।
+
+## 🛠️ Technologies
+
+- Next.js
+- React
+- JavaScript
+- Tailwind CSS
+- REST API
+
+## 🚀 কীভাবে চালাবে
+
+প্রথমে Dependencies Install করো:
+
+```bash
+npm install
+```
+
+এরপর Development Server চালু করো:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+ব্রাউজারে খোলো: http://localhost:3000
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🌐 Live Demo
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+তোমার ওয়েবসাইটের লিংক এখানে যোগ করো।
 
-## Learn More
+## 👨‍💻 Assignment
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Programming Hero — B14-A7 Bazar Dor

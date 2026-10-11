@@ -19,6 +19,8 @@ const PriceTicker = () => {
     return res.json();
 })
     .then((data) => {
+
+        
         const productList = Array.isArray(data)
             ? data
             : Array.isArray(data.data)
@@ -50,9 +52,16 @@ return (
         <div className="price-ticker-track flex w-max">
             {[...products, ...products].map((product, index) => {
                 const price = product.price ?? product.currentPrice ?? 0;
-                const change = Number(
-                    product.changePercent ?? product.change ?? 0
-                );
+                const rawChange =
+                    product.change?.pct ??
+                    product.changePercent ??
+                    0;
+
+                const parsedChange = Number(rawChange);
+
+                const change = Number.isFinite(parsedChange)
+                    ? parsedChange
+                    : 0;
                 const isUp = change >= 0;
 
                 const isDown = product.change?.dir
