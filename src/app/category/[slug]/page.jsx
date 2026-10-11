@@ -20,7 +20,7 @@ const CategoryPage = () => {
     const [sortBy, setSortBy] = useState("default");
 
     useEffect(() => {
-        async function loadCategory() {
+        const loadCategory = async () => {
             setLoading(true);
             setError(false);
 
