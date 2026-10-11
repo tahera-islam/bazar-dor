@@ -43,7 +43,7 @@ npm run dev
 
 ## 🌐 Live Demo
 
-তোমার ওয়েবসাইটের লিংক এখানে যোগ করো।
+
 
 ## 👨‍💻 Assignment
 

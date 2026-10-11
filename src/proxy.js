@@ -1,23 +1,18 @@
 
 import { NextResponse } from "next/server";
-import { auth } from "./lib/auth";
-import { headers } from "next/headers";
+import { getSessionCookie } from "better-auth/cookies";
 
-export const proxy = async (request) => {
-    const session = await auth.api.getSession({
-        headers: await headers(),
-    });
+export function proxy(request) {
+    const sessionCookie = getSessionCookie(request);
 
-    const user = session?.user;
-
-    if (!user) {
+    if (!sessionCookie) {
         return NextResponse.redirect(
             new URL("/sign-in", request.url)
         );
     }
 
     return NextResponse.next();
-};
+}
 
 export const config = {
     matcher: ["/product/:path*", "/profile/:path*"],
