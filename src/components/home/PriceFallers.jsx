@@ -1,4 +1,4 @@
-import ProductCard from "../ProductCard";
+import ProductCard from "./ProductCard";
 
 const PriceFallers = ({ products }) => {
     // যেসব পণ্যের দাম কমেছে, শুধু সেগুলো নেওয়া
